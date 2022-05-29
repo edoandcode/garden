@@ -1,0 +1,19 @@
+Sviluppare, in forma semplificata, una applicazione per la gestione di un orto domestico. Un Orto è caratterizzata da:
+- superficie espressa in metri quadri (intero maggiore di 4);
+- elenco degli ortaggi presenti (al massimo 50);
+- numero degli ortaggi presenti.
+Definire la classe Orto e il relativo costruttore verificando la correttezza del parametro superficie fornito.
+Viene lanciata un'eccezione per parametri errati.
+Si noti che quando  una istanza della classe Orto viene creata, l'orto non conterrà alcuna pianta di ortaggio.
+Un Ortaggio è caratterizzato da:
+- nome (String di almeno 2 caratteri);
+- numero di piante (intero maggiore di 0);
+- data della semina (un intero maggiore di 0);
+- data di raccolta prevista (un intero maggiore della data di semina).
+Definire la classe Ortaggio e il relativo costruttore verificando la correttezza dei parametri forniti.
+Viene lanciata un'eccezione per parametri errati.
+Definire il metodo pianta(Ortaggio o) in Orto che aggiunge una istanza di Ortaggio all'orto.
+Prima di aggiungere l'ortaggio, verificare che vi sia spazio sufficiente nell'orto per piantare il numero di piante dell'ortaggio,
+considerando che l'orto può ospitare 10 piante per metro quadro (indipendentemente dal tipo di ortaggio). fornito.
+Viene lanciata un'eccezione se l'ortaggio non può essere aggiunto.
+Quindi riscrivere il metodo toString() di Orto che stampa l'elenco completo degli ortaggi presenti nell'orto comprese le date di semina e raccolta.
