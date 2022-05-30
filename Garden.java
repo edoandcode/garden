@@ -4,8 +4,9 @@ import exercises.garden.exceptions.AlreadySownException;
 import exercises.garden.exceptions.BiodiversityException;
 import exercises.garden.exceptions.GardenSpaceException;
 import exercises.garden.exceptions.SurfaceException;
+import exercises.garden.interfaces.Plantable;
 
-public class Garden {
+public class Garden implements Plantable {
     private int surface;
     private Vegetable[] vegetables;
     private final int MIN_GARDEN_SURFACE = 5;
@@ -13,13 +14,13 @@ public class Garden {
     private final int PLANTS_FOR_M2 = 10;
     private int plantsSown;
     private int biodiversity;
-    private Vegetable[] biodiversityList;
+    private Vegetable[] cultivarList;
 
     public Garden(int surface) throws Exception{
         if(surface >= MIN_GARDEN_SURFACE) this.surface = surface;
         else throw new SurfaceException(MIN_GARDEN_SURFACE);
         this.vegetables = new Vegetable[0];
-        this.biodiversityList = new Vegetable[MAX_BIODIVERSITY+1];
+        this.cultivarList = new Vegetable[MAX_BIODIVERSITY+1];
     }
 
     /**
@@ -39,7 +40,7 @@ public class Garden {
                             throw new GardenSpaceException(numberOfPlants - i);
                         }
                     }
-                    biodiversityList[biodiversity] = vegetable;
+                    cultivarList[biodiversity] = vegetable;
                     biodiversity++;
                 }else throw new BiodiversityException();
             }else throw new AlreadySownException(vegetable);
@@ -62,7 +63,7 @@ public class Garden {
 
     private String displayVegetablesList(){
         String list = "";
-        for(Vegetable cultivar : biodiversityList){
+        for(Vegetable cultivar : cultivarList){
             if(cultivar == null) break;
             list+= "\n" + cultivar.getName() + ":";
             list+= "\n  " + cultivar.getSowingDate();
